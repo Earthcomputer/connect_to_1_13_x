@@ -10,6 +10,7 @@
     "MixinCPacketHandshake",
     "MixinPacketBuffer",
     "MixinBlock",
-    "MixinItem"
+    "MixinItem",
+    "MixinItemModelMesher"
   ]
 }

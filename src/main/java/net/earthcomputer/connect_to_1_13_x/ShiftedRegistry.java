@@ -12,6 +12,11 @@ public class ShiftedRegistry extends RegistryNamespaced {
         shifts.add(new IDShift(protocol, affectedId, shiftAmount));
     }
 
+    @SuppressWarnings("unchecked")
+    public int getOriginalId(Object obj) {
+        return super.getIDForObject(obj);
+    }
+
     @Override
     @SuppressWarnings("unchecked")
     public int getIDForObject(Object obj) {
