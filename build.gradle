@@ -1,0 +1,48 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url 'https://www.dimdev.org/maven/' }
+    }
+    dependencies {
+        classpath 'org.dimdev:ForgeGradle:2.3-SNAPSHOT'
+    }
+}
+
+apply plugin: 'net.minecraftforge.gradle.tweaker-client'
+apply plugin: 'java'
+
+group 'net.earthcomputer'
+version '1.0'
+archivesBaseName = 'connect_to_1_13_x'
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven { url 'https://www.dimdev.org/maven/' }
+}
+
+dependencies {
+    implementation 'org.dimdev:rift:1.0.3-45:dev'
+
+    // Fix natives
+    def os = System.properties['os.name'].toLowerCase()
+    if (os.contains('win'))
+        os = 'windows'
+    else if (os.contains("mac"))
+        os = 'macos'
+    else
+        os = 'linux'
+    for (def lwjglLib : ['lwjgl', 'lwjgl-glfw', 'lwjgl-jemalloc', 'lwjgl-openal', 'lwjgl-opengl', 'lwjgl-stb'])
+        implementation "org.lwjgl:$lwjglLib:3.1.6:natives-$os"
+}
+
+
+minecraft {
+    version = '1.13'
+    mappings = 'snapshot_5'
+    runDir = 'run'
+    tweakClass = 'org.dimdev.riftloader.launch.RiftLoaderClientTweaker'
+}

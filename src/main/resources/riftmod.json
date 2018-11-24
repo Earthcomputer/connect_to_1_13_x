@@ -1,0 +1,10 @@
+{
+  "id": "connect_to_1_13_x",
+  "name": "Connect to 1.13.x",
+  "authors": [
+    "Earthcomputer"
+  ],
+  "listeners": [
+    "net.earthcomputer.connect_to_1_13_x.ModListener"
+  ]
+}
