@@ -7,7 +7,6 @@
   "refmap": "mixins.connect_to_1_13_x.refmap.json",
   "mixins": [
     "MixinServerListEntryNormal",
-    "MixinCPacketHandshake",
-    "MixinGuiConnecting1"
+    "MixinCPacketHandshake"
   ]
 }
