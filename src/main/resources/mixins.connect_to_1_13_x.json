@@ -12,6 +12,8 @@
     "MixinBlock",
     "MixinItem",
     "MixinItemModelMesher",
-    "MixinEntityDataManager"
+    "MixinEntityDataManager",
+    "MixinCPacketEditBook",
+    "MixinEntityPlayerSP"
   ]
 }
