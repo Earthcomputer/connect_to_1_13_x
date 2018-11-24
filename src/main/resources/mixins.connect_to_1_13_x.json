@@ -8,6 +8,7 @@
   "mixins": [
     "MixinServerListEntryNormal",
     "MixinCPacketHandshake",
-    "MixinPacketBuffer"
+    "MixinPacketBuffer",
+    "MixinBlock"
   ]
 }

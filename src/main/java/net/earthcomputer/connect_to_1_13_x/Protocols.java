@@ -1,5 +1,7 @@
 package net.earthcomputer.connect_to_1_13_x;
 
+import net.minecraft.block.state.IBlockState;
+
 public class Protocols {
 
     public static final int PROTOCOL_1_13_pre9 = 391;
@@ -23,6 +25,12 @@ public class Protocols {
             return;
 
         activeProtocol = newProtocol;
+    }
+
+    public static ShiftingIntIdentityMap<IBlockState> createBlockStateIdMap() {
+        ShiftingIntIdentityMap<IBlockState> map = new ShiftingIntIdentityMap<>();
+        map.addShift(PROTOCOL_18w30a, 1127, 1); // Unstable TNT
+        return map;
     }
 
 }
