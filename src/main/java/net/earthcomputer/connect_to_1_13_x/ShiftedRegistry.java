@@ -1,10 +1,10 @@
 package net.earthcomputer.connect_to_1_13_x;
 
-import net.minecraft.util.ObjectIntIdentityMap;
+import net.minecraft.util.registry.RegistryNamespaced;
 
 import java.util.TreeSet;
 
-public class ShiftingIntIdentityMap<T> extends ObjectIntIdentityMap<T> {
+public class ShiftedRegistry extends RegistryNamespaced {
 
     private TreeSet<IDShift> shifts = new TreeSet<>();
 
@@ -13,15 +13,15 @@ public class ShiftingIntIdentityMap<T> extends ObjectIntIdentityMap<T> {
     }
 
     @Override
-    public int get(T value) {
-        int id = super.get(value);
+    @SuppressWarnings("unchecked")
+    public int getIDForObject(Object obj) {
+        int id = super.getIDForObject(obj);
         return IDShift.forwardShift(id, shifts);
     }
 
     @Override
-    public T getByValue(int id) {
+    public Object getObjectById(int id) {
         id = IDShift.backwardsShift(id, shifts);
-        return super.getByValue(id);
+        return super.getObjectById(id);
     }
-
 }

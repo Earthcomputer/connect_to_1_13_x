@@ -9,6 +9,7 @@
     "MixinServerListEntryNormal",
     "MixinCPacketHandshake",
     "MixinPacketBuffer",
-    "MixinBlock"
+    "MixinBlock",
+    "MixinItem"
   ]
 }
